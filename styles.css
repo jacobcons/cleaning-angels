@@ -16,15 +16,24 @@
 body {
 	font-family: NeuzeitS-Book;
 }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+p {
+  line-height: 1.7em;
+}
 
 .wrapper {
   max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
 }
+
 .logo {
   text-align: center;
 }
-
 .logo__text {
   font-family: LustScript;
   font-size: 4rem;
@@ -32,22 +41,74 @@ body {
   display: inline-block;
   margin: 4rem 0;
 }
-
 .logo__wing {
   display: inline-block;
   position: absolute;
   top: 50%;
   width: 2.1875em;
 }
-
 .logo__wing:nth-of-type(1) {
   left: -0.46875em;
   transform: translate(-100%, -50%);
 }
-
 .logo__wing:nth-of-type(2) {
   right: -0.46875em;
   transform: translate(100%, -50%)
+}
+
+.row {
+  display: flex;
+}
+.row--gutter {
+  margin-left: -1.75rem;
+  margin-right: -1.75rem;
+}
+.row--gutter > [class*=col] {
+  padding: 0 1.75rem;
+}
+.col-2-1 {
+  flex-basis: 50%;
+}
+
+.service {
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.service:after {
+  content: '';
+  display: block;
+  padding-top: 103.86%;
+}
+.service__title {
+  font-family: Didot;
+  color: #fff;
+  font-size: 1.125rem;
+  position: absolute;
+  left: 14px;
+  bottom: 15px;
+  margin: 0;
+}
+.service__text {
+  font-family: Didot;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.service__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform .4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4FAAB9;
+}
+.service:hover > .service__overlay {
+  transform: translateY(0);
 }
 
 @media (max-width: 1000px) {
