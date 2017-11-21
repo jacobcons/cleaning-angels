@@ -1,0 +1,70 @@
+@font-face {
+    font-family: Didot;
+    src: url(fonts/Didot/Didot.eot?) format("eot"), url(fonts/Didot/Didot.woff2) format("woff2"), url(fonts/Didot/Didot.woff) format("woff"), url(fonts/Didot/Didot.ttf) format("truetype"), url(fonts/Didot/Didot.svg) format("svg");
+}
+
+@font-face {
+    font-family: LustScript;
+    src: url(fonts/LustScript/LustScript.eot?) format("eot"), url(fonts/LustScript/LustScript.woff2) format("woff2"), url(fonts/LustScript/LustScript.woff) format("woff"), url(fonts/LustScript/LustScript.ttf) format("truetype"), url(fonts/LustScript/LustScript.svg) format("svg");
+}
+
+@font-face {
+    font-family: NeuzeitS-Book;
+    src: url(fonts/NeuzeitS-Book/NeuzeitS-Book.eot?) format("eot"), url(fonts/NeuzeitS-Book/NeuzeitS-Book.woff2) format("woff2"), url(fonts/NeuzeitS-Book/NeuzeitS-Book.woff) format("woff"), url(fonts/NeuzeitS-Book/NeuzeitS-Book.ttf) format("truetype"), url(fonts/NeuzeitS-Book/NeuzeitS-Book.svg) format("svg");
+}
+
+body {
+	font-family: NeuzeitS-Book;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  text-align: center;
+}
+
+.logo__text {
+  font-family: LustScript;
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+  margin: 4rem 0;
+}
+
+.logo__wing {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 2.1875em;
+}
+
+.logo__wing:nth-of-type(1) {
+  left: -0.46875em;
+  transform: translate(-100%, -50%);
+}
+
+.logo__wing:nth-of-type(2) {
+  right: -0.46875em;
+  transform: translate(100%, -50%)
+}
+
+@media (max-width: 1000px) {
+  .logo__text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo__text {
+    width: 207px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo__text {
+    font-size: 2rem;
+    width: 138px;
+  }
+}
