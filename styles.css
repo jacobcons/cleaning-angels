@@ -15,14 +15,17 @@
 
 body {
 	font-family: NeuzeitS-Book;
+  margin: 0.5rem 0 2rem 0;
+  overflow-x: hidden;
 }
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 p {
-  line-height: 1.7em;
+  font-size: 1rem;
+  line-height: 1.88rem;
 }
 
 .wrapper {
@@ -58,16 +61,18 @@ p {
 
 .row {
   display: flex;
+  flex-flow: row wrap;
+  max-width: initial;
 }
 .row--gutter {
-  margin-left: -1.75rem;
-  margin-right: -1.75rem;
+  margin: 0 -1.875rem 0 -1.875rem;
 }
 .row--gutter > [class*=col] {
-  padding: 0 1.75rem;
+  padding: 0 1.875rem 0 1.875rem;
 }
-.col-2-1 {
-  flex-basis: 50%;
+.col-2 {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 .service {
@@ -111,9 +116,54 @@ p {
   transform: translateY(0);
 }
 
+.review {}
+
+.review__rating {
+  font-size: 1.375rem;
+  color: #4FAAB9;
+  margin: 2.5rem 0 0 0;
+}
+
+.review__text {
+  font-size: 0.9375rem;
+  margin: 0.22rem 0 0.83rem 0;
+}
+
+.review__name {
+  font-size: 1.1111rem;
+  font-family: LustScript;
+  text-align: right;
+}
+
+.contact {
+  text-decoration: underline;
+  font-family: Didot;
+  font-style: italic;
+  font-size: calc(0.5vw + 1rem);
+}
+
+.contact a {
+  color: #000;
+  margin: 2.2rem 0;
+  display: block;
+}
+
 @media (max-width: 1000px) {
   .logo__text {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .col-1-medium {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }  
+  .contact {
+    font-size: 1.3rem;
+  }
+  .contact a {
+    margin: 1.8rem 0;
   }
 }
 
@@ -125,7 +175,33 @@ p {
 
 @media (max-width: 480px) {
   .logo__text {
-    font-size: 2rem;
+    font-size: 1.9rem;
     width: 138px;
+  }
+  .col-1-small {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .row--gutter {
+    margin: 0;
+  }
+  .row--gutter [class*=col] {
+    padding: 0;
+  }
+  .contact {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  p {
+    font-size: 0.77rem;
+    line-height: 1.7em;
+  }
+  .review__text {
+    font-size: 0.77rem;
+  }
+  .review__rating {
+    margin: 1rem 0 0 0;
   }
 }
